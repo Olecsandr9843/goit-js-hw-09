@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # або назва твоєї основної гілки
+      - main
 
 jobs:
   build-and-deploy:
@@ -27,5 +27,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
-          branch: gh-pages      # гілка, куди деплоїмо
-          folder: dist          # папка, яку деплоїмо
+          branch: gh-pages
+          folder: dist
+          token: ${{ secrets.GITHUB_TOKEN }}
